@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import ColorModeButton from './Buttons/ColorModeButton';
+import ColorModeButton from '../Buttons/ColorModeButton';
 
 function Footer() {
 	return (

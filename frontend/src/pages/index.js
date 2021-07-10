@@ -1,3 +1,10 @@
+import Meta from '@/components/Layout/Meta';
+
 export default function Home() {
-	return <h1>Index</h1>;
+	return (
+		<>
+			<Meta title='Index' />
+			<h1>Index</h1>
+		</>
+	);
 }
