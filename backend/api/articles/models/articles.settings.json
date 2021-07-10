@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "Articles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 60
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "readingTime": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "tags": {
+      "type": "text",
+      "required": false
+    },
+    "author": {
+      "model": "authors"
+    },
+    "previewQuote": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "maxLength": 60
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "name": "Stories",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "author": {
+      "model": "authors"
+    },
+    "instagramLink": {
+      "type": "string",
+      "required": false
+    },
+    "series": {
+      "via": "stories",
+      "collection": "serie",
+      "dominant": true
+    },
+    "previewQuote": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "maxLength": 60,
+      "required": true
+    }
+  }
+}

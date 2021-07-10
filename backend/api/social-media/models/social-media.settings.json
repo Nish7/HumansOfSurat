@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "social_medias",
+  "info": {
+    "name": "Social Media",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "instagram": {
+      "type": "string",
+      "required": true
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

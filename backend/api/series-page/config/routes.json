@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/series-page",
+      "handler": "series-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/series-page",
+      "handler": "series-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/series-page",
+      "handler": "series-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

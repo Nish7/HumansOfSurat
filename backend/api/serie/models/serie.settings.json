@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series",
+  "info": {
+    "name": "serie",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 60
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "stories": {
+      "via": "series",
+      "collection": "stories"
+    },
+    "PreviewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title",
+      "maxLength": 60
+    }
+  }
+}
