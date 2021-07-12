@@ -1,6 +1,6 @@
 // Theme Entrypoint
 import { extendTheme } from '@chakra-ui/react';
-import { colors, layerStyles, textStyles } from './foundational';
+import { colors, layerStyles, fonts, textStyles } from './foundational';
 import styles from './global';
 
 export const config = {
@@ -17,6 +17,7 @@ const overrides = {
 
 	// Foundational Styles
 	colors,
+	fonts,
 	layerStyles,
 	textStyles,
 

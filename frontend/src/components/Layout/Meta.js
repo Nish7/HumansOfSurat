@@ -10,8 +10,6 @@ export default function Meta({
 	type = 'website',
 	article,
 }) {
-	console.log(title);
-
 	return (
 		<Head>
 			{/* <!-- Primary Meta Tags --> */}
