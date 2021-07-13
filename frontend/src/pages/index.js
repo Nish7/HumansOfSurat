@@ -1,11 +1,15 @@
+import axios from 'axios';
+
 import Meta from '@/components/Layout/Meta';
 import BodyText from '@/components/Typography/BodyText';
 import Title from '@/components/Typography/Title';
 import Landing from '@/components/Layout/Landing';
+import LatestStories from '@/components/Stories/LatestStories';
 
-export default function Home({ url }) {
+export default function Home({ url, stories }) {
 	return (
 		<>
+			{/* Landing Section */}
 			<Landing>
 				<Meta title='Index' desc='Description is dope' url={url} />
 
@@ -22,11 +26,21 @@ export default function Home({ url }) {
 					Surat
 				</Title>
 			</Landing>
+
+			{/* Latest Stories */}
+			<LatestStories stories={stories} />
 		</>
 	);
 }
 
 export async function getStaticProps() {
 	let url = process.env.FRONTEND_URL;
-	return { props: { url } };
+
+	// ?note: Change to the request to 6 stories only
+	let res = await axios.get(
+		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/stories`,
+	);
+
+	const stories = res.data;
+	return { props: { url, stories } };
 }

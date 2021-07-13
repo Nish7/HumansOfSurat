@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Box, Stack, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import Link from 'next/link';
 import BodyText from '../Typography/BodyText';
@@ -24,6 +24,9 @@ function MenuLinks({ isOpen }) {
 }
 
 function MenuItem({ children, to = '/', ...rest }) {
+	const hoverColor = useColorModeValue('dark', 'light');
+
+	// !There is error in passHref
 	return (
 		<Link passHref href={to}>
 			<BodyText
@@ -31,7 +34,10 @@ function MenuItem({ children, to = '/', ...rest }) {
 				fontSize='md'
 				color='gray.500'
 				display='block'
-				_hover={{ textDecoration: 'gray 2px underline', cursor: 'pointer' }}
+				_hover={{
+					cursor: 'pointer',
+					color: hoverColor,
+				}}
 				{...rest}>
 				{children}
 			</BodyText>

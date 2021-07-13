@@ -14,9 +14,10 @@ function Navbar() {
 			<NavbarContainer>
 				<Logo />
 				<MenuToggle toggle={toggle} isOpen={isOpen} />
+
 				<MenuLinks isOpen={isOpen} />
 			</NavbarContainer>
-			<Divider w='60%' textAlign='center' m='0 auto' />
+			<Divider w='55%' textAlign='center' m='0 auto' />
 		</>
 	);
 }
@@ -28,8 +29,8 @@ function NavbarContainer({ children }) {
 			align='center'
 			justify='space-between'
 			wrap='wrap'
-			w={['80%', '70%']}
-			m='1rem auto'
+			w={['90%', '80%', '70%']}
+			m='1rem auto 0.5rem auto'
 			bg='transparent'
 			colors='white'>
 			{children}

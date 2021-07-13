@@ -14,7 +14,7 @@ function Logo(props) {
 				width='50px'
 				mr={4}
 			/>
-			<BodyText textStyle='title' fontSize='2xl'>
+			<BodyText textStyle='title' fontSize='xl'>
 				Humans of Surat
 			</BodyText>
 		</Flex>

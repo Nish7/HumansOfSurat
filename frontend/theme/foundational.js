@@ -2,7 +2,8 @@
 
 // Colors
 export const colors = {
-	primary: '#fff',
+	light: '#fff',
+	dark: 'gray.700',
 };
 
 export const fonts = {
@@ -24,21 +25,20 @@ export const textStyles = {
 	'header-1': {
 		fontFamily: 'legacy',
 		fontWeight: 'bold',
-		fontSize: '6xl',
+		fontSize: ['3xl', '4xl', '6xl'],
 		lineHeight: 'none',
 	},
 
 	'header-2': {
 		fontFamily: 'legacy',
 		fontWeight: 'bold',
-		fontSize: '3xl',
+		fontSize: '2xl',
 		lineHeight: 'none',
 	},
 
 	body: {
 		font: 'body',
-		fontWeight: 'regular',
-		fontSize: ['sm', 'md', 'lg'],
+		fontSize: ['sm', 'md'],
 		lineHeight: 'none',
 	},
 };
