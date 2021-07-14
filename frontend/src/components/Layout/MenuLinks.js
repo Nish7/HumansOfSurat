@@ -26,22 +26,19 @@ function MenuLinks({ isOpen }) {
 function MenuItem({ children, to = '/', ...rest }) {
 	const hoverColor = useColorModeValue('dark', 'light');
 
-	// !There is error in passHref
 	return (
-		<Link passHref href={to}>
-			<BodyText
-				textStyle='title'
-				fontSize='md'
-				color='gray.500'
-				display='block'
-				_hover={{
-					cursor: 'pointer',
-					color: hoverColor,
-				}}
-				{...rest}>
-				{children}
-			</BodyText>
-		</Link>
+		<BodyText
+			textStyle='title'
+			fontSize='md'
+			color='gray.500'
+			display='block'
+			_hover={{
+				cursor: 'pointer',
+				color: hoverColor,
+			}}
+			{...rest}>
+			<Link href={to}>{children}</Link>
+		</BodyText>
 	);
 }
 

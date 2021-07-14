@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import BodyText from '../Typography/BodyText';
 import Heading2 from '../Typography/Heading-2';
+import Link from 'next/link';
 import { FaUserAlt } from 'react-icons/fa';
 import {
 	Flex,
@@ -16,41 +17,46 @@ export default function StoryCard({ story }) {
 	const bodyColor = useColorModeValue('gray.700', 'gray.400');
 	const bgColor = useColorModeValue('gray.50', '#1c2430');
 	const hoverColor = useColorModeValue('black', 'gray.100');
+	const hoverBg = useColorModeValue('gray.100', 'gray.700');
 
-	// ?image Url will be changes in Prod (as image will be hosted)
+	// TODO image Url will be changes in Prod (as image will be hosted)
+	// TODO href to the link is left
 	return (
-		<Box
-			flexBasis='30%'
-			m={2}
-			d='inline-block'
-			bg={bgColor}
-			p={8}
-			borderRadius={10}>
-			<Image
-				src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${story.image.url}`}
-				alt={image.formats.thumbnail.hash}
-				layout='fill'
-				width='100%'
-				borderRadius={5}
-				maxHeight={96}
-				mb={5}
-			/>
+		<Link passHref href='/'>
+			<Box
+				flexBasis='30%'
+				m={2}
+				d='inline-block'
+				// bg={bgColor}
+				p={8}
+				borderRadius={10}
+				_hover={{ cursor: 'pointer', bg: hoverBg }}>
+				<Image
+					src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${story.image.url}`}
+					alt={image.formats.thumbnail.hash}
+					layout='fill'
+					width='100%'
+					borderRadius={5}
+					maxHeight={96}
+					mb={5}
+				/>
 
-			<Heading2 mb={5}>{title}</Heading2>
+				<Heading2 mb={5}>{title}</Heading2>
 
-			<BodyText
-				mb={5}
-				lineHeight={1.7}
-				color={bodyColor}
-				_hover={{ color: hoverColor }}>
-				{body}
-			</BodyText>
+				<BodyText
+					mb={5}
+					lineHeight={1.7}
+					color={bodyColor}
+					_hover={{ color: hoverColor }}>
+					{body}
+				</BodyText>
 
-			<StoryInfo
-				fullname={author?.fullName ?? 'Anonymous'}
-				published_at={published_at}
-			/>
-		</Box>
+				<StoryInfo
+					fullname={author?.fullName ?? 'Anonymous'}
+					published_at={published_at}
+				/>
+			</Box>
+		</Link>
 	);
 }
 

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-// TODO: Future update to next-seo library
+// TODO Future update to next-seo library
 
 export default function Meta({
 	title,
