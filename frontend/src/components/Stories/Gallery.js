@@ -1,18 +1,23 @@
-import { Box } from '@chakra-ui/react';
 import StoryCard from './StoryCard';
+import Masonry from 'react-masonry-css';
 
 function Gallery({ stories }) {
 	return (
-		<Box
-			sx={{ columnCount: [1, 2, 3], columnGap: '20px' }}
-			padding={4}
-			w='100%'
-			maxW={{ base: '100%', md: '92%' }}
-			mx='auto'>
-			{stories.map((story) => (
-				<StoryCard key={story.id} story={story} />
-			))}
-		</Box>
+		<>
+			<Masonry
+				breakpointCols={{
+					default: 3,
+					1100: 3,
+					700: 2,
+					500: 1,
+				}}
+				className='my-masonry-grid'
+				columnClassName='my-masonry-grid_column'>
+				{stories.map((story) => (
+					<StoryCard key={story.id} story={story} />
+				))}
+			</Masonry>
+		</>
 	);
 }
 

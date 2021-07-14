@@ -9,5 +9,14 @@ export default global = {
 			bg: mode('white', 'gray.800')(props),
 			lineHeight: 'base',
 		},
+		'.my-masonry-grid': {
+			display: 'flex',
+			marginLeft: '0px' /* gutter size offset */,
+			width: 'auto',
+		},
+		'.my-masonry-grid_column': {
+			paddingLeft: '10px' /* gutter size */,
+			backgroundClip: 'padding-box',
+		},
 	}),
 };

@@ -1,4 +1,7 @@
 import { format } from 'date-fns';
+import BodyText from '../Typography/BodyText';
+import Heading2 from '../Typography/Heading-2';
+import { FaUserAlt } from 'react-icons/fa';
 import {
 	Flex,
 	Box,
@@ -7,20 +10,22 @@ import {
 	Icon,
 	Text,
 } from '@chakra-ui/react';
-import React from 'react';
-import BodyText from '../Typography/BodyText';
-import Heading2 from '../Typography/Heading-2';
-import { FaUserAlt } from 'react-icons/fa';
 
-// ?image Url will be changes in Prod (as image will be hosted)
 export default function StoryCard({ story }) {
 	const { author, image, title, body, published_at } = story;
 	const bodyColor = useColorModeValue('gray.700', 'gray.400');
 	const bgColor = useColorModeValue('gray.50', '#1c2430');
 	const hoverColor = useColorModeValue('black', 'gray.100');
 
+	// ?image Url will be changes in Prod (as image will be hosted)
 	return (
-		<Box my={2} d='inline-block' bg={bgColor} p={8} borderRadius={10}>
+		<Box
+			flexBasis='30%'
+			m={2}
+			d='inline-block'
+			bg={bgColor}
+			p={8}
+			borderRadius={10}>
 			<Image
 				src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${story.image.url}`}
 				alt={image.formats.thumbnail.hash}
@@ -41,7 +46,10 @@ export default function StoryCard({ story }) {
 				{body}
 			</BodyText>
 
-			<StoryInfo fullname={author.fullName} published_at={published_at} />
+			<StoryInfo
+				fullname={author?.fullName ?? 'Anonymous'}
+				published_at={published_at}
+			/>
 		</Box>
 	);
 }

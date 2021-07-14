@@ -6,7 +6,11 @@ import Title from '@/components/Typography/Title';
 import Landing from '@/components/Layout/Landing';
 import LatestStories from '@/components/Stories/LatestStories';
 
-export default function Home({ url, stories }) {
+export default function Home({
+	url,
+	initialStories = [],
+	homeInfo: { header, subtitle },
+}) {
 	return (
 		<>
 			{/* Landing Section */}
@@ -18,17 +22,17 @@ export default function Home({ url, stories }) {
 					align='center'
 					color='gray.500'
 					mb={[2, 0]}>
-					A small town, yet so many stories...
+					{/* A small town, yet so many stories... */}
+					{subtitle}
 				</BodyText>
 
 				<Title align='center'>
-					Humans of <br />
-					Surat
+					Humans of <br /> Surat
 				</Title>
 			</Landing>
 
 			{/* Latest Stories */}
-			<LatestStories stories={stories} />
+			<LatestStories initialStories={initialStories} />
 		</>
 	);
 }
@@ -36,11 +40,16 @@ export default function Home({ url, stories }) {
 export async function getStaticProps() {
 	let url = process.env.FRONTEND_URL;
 
-	// ?note: Change to the request to 6 stories only
+	// ?TODO: Change to the request to 6 stories only
 	let res = await axios.get(
-		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/stories`,
+		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/stories?_sort=created_at:desc&_limit=6`,
 	);
 
-	const stories = res.data;
-	return { props: { url, stories } };
+	let data = await axios.get(
+		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page`,
+	);
+
+	const initialStories = res.data;
+	const homeInfo = data.data;
+	return { props: { url, initialStories, homeInfo } };
 }
