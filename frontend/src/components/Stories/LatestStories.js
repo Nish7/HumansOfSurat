@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Heading1 from '../Typography/Heading-1';
 import Gallery from './Gallery';
 import LoadMore from '../Buttons/LoadMore';
+import api from '@/utils/api';
 
 function LatestStories({ initialStories }) {
 	const [stories, setStories] = useState(initialStories);
@@ -12,8 +12,8 @@ function LatestStories({ initialStories }) {
 	// ?TODO: Load more button works... but unneccessary additional click required if num of posts fetched is multiple of 6.
 	// ?TODO: ineffecient (re-renderers of exisiting story cards) and better solution needed
 	const loadMore = async () => {
-		const res = await axios.get(
-			`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/stories?_sort=created_at:desc&_start=${next}&_limit=6`,
+		const res = await api.get(
+			`/stories?_sort=created_at:desc&_start=${next}&_limit=6`,
 		);
 		const newStories = res.data;
 		const allStories = [...stories, ...newStories];

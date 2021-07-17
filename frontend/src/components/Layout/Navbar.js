@@ -1,12 +1,14 @@
-import { Divider, Flex } from '@chakra-ui/react';
+import { Button, Divider, Flex, Icon } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import MenuToggle from '../Buttons/MenuToggle';
 import MenuLinks from './MenuLinks';
 import Logo from '../Lib/Logo';
+import Share from '../Buttons/Share';
+
+// https://medium.com/@glweems/react-auto-hide-on-scroll-navbar-617a6749a96 (scrolling hide/reveal)
 
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
-
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (
@@ -16,8 +18,9 @@ function Navbar() {
 				<MenuToggle toggle={toggle} isOpen={isOpen} />
 
 				<MenuLinks isOpen={isOpen} />
+				<Share isOpen={isOpen} />
 			</NavbarContainer>
-			<Divider w='55%' textAlign='center' m='0 auto' />
+			{/* <Divider w='55%' textAlign='center' m='0 auto' /> */}
 		</>
 	);
 }

@@ -11,7 +11,7 @@ function MenuLinks({ isOpen }) {
 			<Stack
 				spacing={8}
 				align='center'
-				justify={['center', 'center', 'flex-end']}
+				justify={['center', 'center', 'space-between']}
 				direction='row'
 				mt={[4, 4, 0]}
 				pt={[3, 3, 0]}>
@@ -24,7 +24,7 @@ function MenuLinks({ isOpen }) {
 }
 
 function MenuItem({ children, to = '/', ...rest }) {
-	const hoverColor = useColorModeValue('dark', 'light');
+	const hoverColor = useColorModeValue('bg', 'light');
 
 	return (
 		<BodyText

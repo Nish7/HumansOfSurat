@@ -30,7 +30,10 @@ export default function StoryCard({ story }) {
 				// bg={bgColor}
 				p={8}
 				borderRadius={10}
-				_hover={{ cursor: 'pointer', bg: hoverBg }}>
+				_hover={{
+					cursor: 'pointer',
+					bg: hoverBg,
+				}}>
 				<Image
 					src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${story.image.url}`}
 					alt={image.formats.thumbnail.hash}

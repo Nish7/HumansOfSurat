@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import api from '@/utils/api';
 import Meta from '@/components/Layout/Meta';
 import BodyText from '@/components/Typography/BodyText';
 import Title from '@/components/Typography/Title';
@@ -7,12 +7,17 @@ import Landing from '@/components/Layout/Landing';
 import LatestStories from '@/components/Stories/LatestStories';
 import SeriesCard from '@/components/Series/SeriesCard';
 import Heading1 from '@/components/Typography/Heading-1';
+import MoreHumans from '@/components/Layout/MoreHumans';
+import SocialMedia from '@/components/Layout/SocialMedia';
 
 export default function Home({
 	url,
 	initialStories = [],
 	homeInfo: { header, subtitle },
 	latestSeries,
+	events,
+	about,
+	socialMedia,
 }) {
 	return (
 		<>
@@ -41,6 +46,12 @@ export default function Home({
 				Latest Series
 			</Heading1>
 			<SeriesCard series={latestSeries} />
+
+			{/* More Humans of Surat */}
+			<MoreHumans events={events} about={about} />
+
+			{/* Social Media */}
+			<SocialMedia social={socialMedia} />
 		</>
 	);
 }
@@ -48,20 +59,28 @@ export default function Home({
 export async function getStaticProps() {
 	let url = process.env.FRONTEND_URL;
 
-	// TODO Prevent Waterfall Effect :: Use promise.all :: How to assign vars.
-	let storyReq = await axios.get(
-		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/stories?_sort=created_at:desc&_limit=6`,
-	);
-	let homeReq = await axios.get(
-		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page`,
-	);
-	let seriesReq = await axios.get(
-		`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/series?_sort=created_at:desc&_limit=1`,
-	);
+	const urls = [
+		'/stories?_sort=created_at:desc&_limit=6',
+		'/home-page',
+		'/series?_sort=created_at:desc&_limit=1',
+		'/about',
+		'/events?_sort=datetime:desc&_limit=3',
+		'social-media',
+	];
 
-	const initialStories = storyReq.data;
-	const homeInfo = homeReq.data;
-	const latestSeries = seriesReq.data[0];
+	const responses = await Promise.all(urls.map((req) => api.get(req)));
+	const [initialStories, homeInfo, series, about, events, socialMedia] =
+		responses.map((r) => r['data']);
 
-	return { props: { url, initialStories, homeInfo, latestSeries } };
+	return {
+		props: {
+			url,
+			initialStories,
+			homeInfo,
+			latestSeries: series[0],
+			about,
+			events,
+			socialMedia,
+		},
+	};
 }

@@ -7,12 +7,12 @@ function Footer() {
 	return (
 		<>
 			<Flex align='center' justify='space-between' w='98%' m='10px auto'>
-				<BodyText fontSize={['xs', 'sm']}>
+				<ColorModeButton />
+				<BodyText color='gray.500' fontSize={['xs', 'sm']}>
 					&copy; {new Date().getFullYear()} Humans of Surat | Developed with{' '}
 					<Icon as={FaHeart} color='red.400' /> by{' '}
 					<Link href='https://www.instagram.com/iam_nish7/'>Nish</Link>
 				</BodyText>
-				<ColorModeButton />
 			</Flex>
 		</>
 	);

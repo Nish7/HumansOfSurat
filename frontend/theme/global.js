@@ -9,6 +9,10 @@ export default global = {
 			bg: mode('white', 'gray.800')(props),
 			lineHeight: 'base',
 		},
+
+		'a:hover': {
+			cursor: 'pointer',
+		},
 		'.my-masonry-grid': {
 			display: 'flex',
 			marginLeft: '0px' /* gutter size offset */,
