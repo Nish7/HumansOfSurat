@@ -6,7 +6,6 @@ import Logo from '../Lib/Logo';
 import Share from '../Buttons/Share';
 
 // https://medium.com/@glweems/react-auto-hide-on-scroll-navbar-617a6749a96 (scrolling hide/reveal)
-
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);

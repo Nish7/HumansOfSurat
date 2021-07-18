@@ -1,5 +1,3 @@
-import axios from 'axios';
-import api from '@/utils/api';
 import Meta from '@/components/Layout/Meta';
 import BodyText from '@/components/Typography/BodyText';
 import Title from '@/components/Typography/Title';
@@ -9,6 +7,7 @@ import SeriesCard from '@/components/Series/SeriesCard';
 import Heading1 from '@/components/Typography/Heading-1';
 import MoreHumans from '@/components/Layout/MoreHumans';
 import SocialMedia from '@/components/Layout/SocialMedia';
+import fetcher from '@/utils/fetcher';
 
 export default function Home({
 	url,
@@ -23,7 +22,7 @@ export default function Home({
 		<>
 			{/* Landing Section */}
 			<Landing>
-				<Meta title='Index' desc='Description is dope' url={url} />
+				<Meta title='Index' desc='homepage of the humans of surat' url={url} />
 
 				<BodyText
 					fontFamily='HKGrotesk-BoldLegacy'
@@ -59,18 +58,15 @@ export default function Home({
 export async function getStaticProps() {
 	let url = process.env.FRONTEND_URL;
 
-	const urls = [
-		'/stories?_sort=created_at:desc&_limit=6',
-		'/home-page',
-		'/series?_sort=created_at:desc&_limit=1',
-		'/about',
-		'/events?_sort=datetime:desc&_limit=3',
-		'social-media',
-	];
-
-	const responses = await Promise.all(urls.map((req) => api.get(req)));
 	const [initialStories, homeInfo, series, about, events, socialMedia] =
-		responses.map((r) => r['data']);
+		await fetcher([
+			'/stories?_sort=created_at:desc&_limit=6',
+			'/home-page',
+			'/series?_sort=created_at:desc&_limit=1',
+			'/about',
+			'/events?_sort=datetime:desc&_limit=3',
+			'social-media',
+		]);
 
 	return {
 		props: {

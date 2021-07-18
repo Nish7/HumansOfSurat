@@ -16,7 +16,7 @@ function MenuLinks({ isOpen }) {
 				mt={[4, 4, 0]}
 				pt={[3, 3, 0]}>
 				<MenuItem to='/'>Stories</MenuItem>
-				<MenuItem to='/article'>Article</MenuItem>
+				<MenuItem to='/article'>Articles</MenuItem>
 				<MenuItem to='/series'>Series</MenuItem>
 			</Stack>
 		</Box>

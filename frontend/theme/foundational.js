@@ -10,6 +10,7 @@ export const colors = {
 export const fonts = {
 	title: 'HK Grotesk',
 	legacy: 'HKGrotesk-BoldLegacy',
+	black: 'HKGrotesk-Black',
 	heading: 'Thonburi',
 	body: 'Muli',
 };
