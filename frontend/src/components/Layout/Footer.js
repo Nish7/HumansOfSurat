@@ -1,6 +1,7 @@
 import { Flex, Icon, Link } from '@chakra-ui/react';
 import ColorModeButton from '../Buttons/ColorMode';
 import BodyText from '../Typography/BodyText';
+import SocialMedia from './SocialMedia';
 import { FaHeart } from 'react-icons/fa';
 
 function Footer() {

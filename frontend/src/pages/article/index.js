@@ -9,7 +9,7 @@ function ArticleIndex({ url, desc, articles }) {
 	return (
 		<>
 			{/* Meta */}
-			<Meta title='articles' desc={desc} url={url} />
+			<Meta title='Articles' desc={desc} url={url} />
 
 			{/* Info */}
 			<VStack h='91vh' justify='center' align='center'>
@@ -28,6 +28,7 @@ function ArticleIndex({ url, desc, articles }) {
 }
 
 export async function getStaticProps() {
+	// TODO: Move this is in client-side then server
 	let url = `${process.env.FRONTEND_URL}/article`;
 	const [info, articles] = await fetcher([
 		'/articles-page',

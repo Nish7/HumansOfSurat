@@ -6,7 +6,7 @@ import ArticleBox from './ArticleBox';
 function YearSection({ year, articles }) {
 	return (
 		<YearContainer year={year}>
-			<Flex w='80%' flexWrap='wrap' mx='auto'>
+			<Flex w={['100%', '100%', '80%']} flexWrap='wrap' mx='auto'>
 				{articles.map((article) => (
 					<ArticleBox key={article.id} article={article} />
 				))}
