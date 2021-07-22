@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 
 export default function StoryCard({ story }) {
-	const { author, image, title, body, published_at } = story;
+	const { author, image, title, body, published_at, slug } = story;
 	const bodyColor = useColorModeValue('gray.700', 'gray.400');
 	const bgColor = useColorModeValue('gray.50', '#1c2430');
 	const hoverColor = useColorModeValue('black', 'gray.100');
@@ -22,7 +22,7 @@ export default function StoryCard({ story }) {
 	// TODO image Url will be changes in Prod (as image will be hosted)
 	// TODO href to the link is left
 	return (
-		<Link passHref href='/'>
+		<Link passHref href={`/story/${slug}`}>
 			<Box
 				flexBasis='30%'
 				m={2}

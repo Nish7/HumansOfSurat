@@ -12,7 +12,8 @@ Status: Development in progress 🟡
 		- [x] Secondary
 	- [x] Initial Wireframes | Home > Stories
 	- [x] Initial Design
-- [ ] Dev.
+
+- [x] Dev.
 	- [x] Backend
 		- [x] Database Modelling
 		- [x] API Routes 
@@ -20,7 +21,7 @@ Status: Development in progress 🟡
 		- [x] Validation 
 		- [x] Configuring View and input label and placeholders
 		- [x] Fake Date - For Dev.
-	- [ ] Frontend
+	- [x] Frontend
 		- [x] Setup - NextJS
 			- [x] Routing [Dynamic]
 		- [x] Chakra Setup 
@@ -37,19 +38,28 @@ Status: Development in progress 🟡
 				- [x] fonts
 		- [x] Navbar
 		- [x] Footer
-		- [ ] Pages
-			- [x] 1 Home Page
-				- [x] Landing Section
-				- [x] Latest Stories
-				- [x] Latest Series
-				- [x] More HOS
-			- [ ] 2 Articles
-				- [x] YearSection
-					- [x] ArticleBox
-			- [ ] 3 Series
-			- [ ] 4 One Series  
-			- [ ] 5 Story Post
-			- [ ] 6 Article Post
+    	- [x] Pages
+  			- [x] 1 Home Page
+  				- [x] Landing Section
+  				- [x] Latest Stories
+  				- [x] Latest Series
+  				- [x] More HOS
+  			- [x] 2 Articles
+  				- [x] ArticleList
+    			- [x] YearSection
+    			- [x] ArticleBox
+  				- [x] Article Page
+  			- [x] 3 Series [All]
+  			- [x] 4 Series Page
+  			- [x] 5 Story Post
+
+- [ ] Further UI Improvements
+	- [ ] Simple and Subtle Transitions
+		- [ ] Title
+		- [ ] Stories and Loading new Stories
+		- [ ] Hover Transitions
+	- [ ] SVG Path Animation (Map)
+	- [ ] Social Media in Footer
 
 - [ ] Deployment
 	- [ ] Prod - Setup - Backend 

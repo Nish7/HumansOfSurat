@@ -1,17 +1,15 @@
-import React from 'react';
 import { Flex, Box } from '@chakra-ui/layout';
 import BodyText from '../Typography/BodyText';
-import Heading1 from '../Typography/Heading-1';
 import Heading2 from '../Typography/Heading-2';
 import { useColorModeValue } from '@chakra-ui/system';
 import Link from 'next/link';
 
-function SeriesCard({ series }) {
-	const { title, PreviewImage } = series;
+function SeriesCard({ series, idx = 0 }) {
+	const { title, PreviewImage, slug } = series;
 
 	// TODO image Url will be changes in Prod (as image will be hosted)
 	return (
-		<Link passHref href='/'>
+		<Link passHref href={`/series/${slug}`}>
 			<Flex
 				bgImage={`url(${process.env.NEXT_PUBLIC_STRAPI_API_URL}${PreviewImage.url})`}
 				backgroundPosition='center'
@@ -21,7 +19,7 @@ function SeriesCard({ series }) {
 				borderRadius={20}
 				mx='auto'
 				my={10}
-				justify='flex-start'
+				justify={`flex-${idx % 2 === 0 ? 'start' : 'end'}`}
 				align='center'
 				_hover={{ cursor: 'pointer' }}>
 				<SeriesInfoBox title={title} />
