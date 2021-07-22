@@ -18,28 +18,28 @@ export const fonts = {
 // Text Styles
 export const textStyles = {
 	title: {
-		fontFamily: 'HK Grotesk',
+		fontFamily: 'title',
 		fontWeight: 'bold',
 		fontSize: ['6xl', '7xl', '9xl'],
 		lineHeight: 'none',
 	},
 
 	'header-1': {
-		fontFamily: 'HKGrotesk-BoldLegacy',
+		fontFamily: 'legacy',
 		fontWeight: 'bold',
 		fontSize: ['3xl', '4xl', '6xl'],
 		lineHeight: 'none',
 	},
 
 	'header-2': {
-		fontFamily: 'HKGrotesk-BoldLegacy',
+		fontFamily: 'legacy',
 		fontWeight: 'bold',
 		fontSize: '2xl',
 		lineHeight: 'none',
 	},
 
 	body: {
-		font: 'Muli',
+		font: 'body',
 		fontSize: ['sm', 'md'],
 		lineHeight: 'none',
 	},
