@@ -1,7 +1,6 @@
 // e.g. src/Chakra.js
 // a) import `ChakraProvider` component as well as the storageManagers
 import theme from '@/theme/index';
-import Fonts from '@/theme/fonts';
 
 import {
 	ChakraProvider,
@@ -18,7 +17,6 @@ export function Chakra({ cookies, children }) {
 
 	return (
 		<ChakraProvider theme={theme} colorModeManager={colorModeManager}>
-			<Fonts />
 			{children}
 		</ChakraProvider>
 	);

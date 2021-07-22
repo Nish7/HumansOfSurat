@@ -1,9 +1,8 @@
 import Meta from '@/components/Layout/Meta';
 import SeriesCard from '@/components/Series/SeriesCard';
-import BodyText from '@/components/Typography/BodyText';
 import Heading2 from '@/components/Typography/Heading-2';
 import fetcher from '@/utils/fetcher';
-import { Box, Flex, Image } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import Masonry from 'react-masonry-css';

@@ -20,8 +20,6 @@ function ArticlePost({ article, url }) {
 		previewImage,
 	} = article;
 
-	console.log(previewImage);
-
 	return (
 		<>
 			<Meta

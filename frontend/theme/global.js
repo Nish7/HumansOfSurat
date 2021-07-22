@@ -22,5 +22,37 @@ export default global = {
 			paddingLeft: '10px' /* gutter size */,
 			backgroundClip: 'padding-box',
 		},
+
+		'@font-face': {
+			fontFamily: 'HK Grotesk',
+			fontStyle: 'normal',
+			fontWeight: 700,
+			fontDisplay: 'swap',
+			src: 'url("/fonts/HKGrotesk-Regular.otf") format("otf")',
+		},
+
+		'@font-face': {
+			fontFamily: 'HKGrotesk-BoldLegacy',
+			fontStyle: 'normal',
+			fontWeight: 700,
+			fontDisplay: 'swap',
+			src: 'url("/fonts/HKGrotesk-BoldLegacy.otf") format("otf")',
+		},
+
+		'@font-face': {
+			fontFamily: 'Muli',
+			fontStyle: 'normal',
+			fontWeight: 700,
+			fontDisplay: 'swap',
+			src: 'url("/fonts/Muli.ttf") format("ttf")',
+		},
+
+		'@font-face': {
+			fontFamily: 'Thonburi',
+			fontStyle: 'normal',
+			fontWeight: 700,
+			fontDisplay: 'swap',
+			src: 'url("/fonts/Thonburi.ttf") format("ttf")',
+		},
 	}),
 };
