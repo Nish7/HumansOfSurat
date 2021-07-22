@@ -6,7 +6,14 @@ import { FaHeart } from 'react-icons/fa';
 function Footer() {
 	return (
 		<>
-			<Flex align='center' justify='space-between' w='98%' m='10px auto'>
+			<Flex
+				align='center'
+				justify='space-between'
+				w='98%'
+				m='10px auto'
+				position='flex'
+				bottom='0'
+				left='0'>
 				<ColorModeButton />
 				<BodyText color='gray.500' fontSize={['xs', 'sm']}>
 					&copy; {new Date().getFullYear()} Humans of Surat | Developed with{' '}

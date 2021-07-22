@@ -10,9 +10,9 @@ function Landing({ children }) {
 				backgroundImage: `url('/images/Map-${colorMode}.svg')`,
 				backgroundRepeat: 'no-repeat',
 				backgroundPosition: 'center center',
-				backgroundSize: ['500px 500px', '900px 900px'],
+				backgroundSize: ['800px 800px', '900px 900px'],
 			}}
-			height='92vh'
+			height='91vh'
 			align='center'
 			justifyContent='center'
 			flexDirection='column'>

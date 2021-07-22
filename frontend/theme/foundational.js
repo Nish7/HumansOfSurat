@@ -19,7 +19,6 @@ export const fonts = {
 export const textStyles = {
 	title: {
 		fontFamily: 'title',
-		fontWeight: 'bold',
 		fontSize: ['6xl', '7xl', '9xl'],
 		lineHeight: 'none',
 	},
@@ -39,7 +38,7 @@ export const textStyles = {
 	},
 
 	body: {
-		font: 'body',
+		fontFamily: 'body',
 		fontSize: ['sm', 'md'],
 		lineHeight: 'none',
 	},

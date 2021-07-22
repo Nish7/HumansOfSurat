@@ -12,9 +12,21 @@ function ArticleIndex({ url, desc, articles }) {
 			<Meta title='Articles' desc={desc} url={url} />
 
 			{/* Info */}
-			<VStack h='91vh' justify='center' align='center'>
-				<Title mb={10}>Articles.</Title>
-				<Heading2 maxWidth='900px' align='center'>
+			<VStack h={['70vh', '70vh', '91vh']} justify='center' align='center'>
+				<Title fontFamily='black' letterSpacing={2} mb={10}>
+					Articles.
+				</Title>
+
+				<Heading2
+					w={['90%', '80%', '80%']}
+					align='center'
+					maxWidth='900px'
+					fontFamily='body'
+					fontWeight='500'
+					fontSize={['md', 'lg', 'xl']}
+					mx='auto'
+					// py={20}
+					lineHeight={1.5}>
 					{desc}
 				</Heading2>
 			</VStack>

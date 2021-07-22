@@ -6,7 +6,7 @@ import ArticleBox from './ArticleBox';
 function YearSection({ year, articles }) {
 	return (
 		<YearContainer year={year}>
-			<Flex w={['100%', '100%', '80%']} flexWrap='wrap' mx='auto'>
+			<Flex w={['70%', '100%', '80%']} flexWrap='wrap' mx={[2, 'auto']}>
 				{articles.map((article) => (
 					<ArticleBox key={article.id} article={article} />
 				))}
@@ -18,11 +18,18 @@ function YearSection({ year, articles }) {
 function YearContainer({ year, children }) {
 	return (
 		<Box position='relative' mb={52}>
-			<Box position='absolute' w='100%' top='-200px' opacity='0.08' zIndex='-1'>
+			<Box
+				position={['relative', 'relative', 'absolute']}
+				w='100%'
+				top={[0, 0, '-200px']}
+				opacity={['0.3', '0.3', '0.08']}
+				zIndex='-1'
+				// display={['none', 'none', 'block']}
+			>
 				<BodyText
 					fontFamily='black'
 					letterSpacing={20}
-					fontSize={['26rem']}
+					fontSize={['5xl', '7xl', '26rem']}
 					fontWeight='bold'
 					color='gray.500'
 					align='center'>

@@ -23,16 +23,15 @@ export default function Home({
 			{/* Landing Section */}
 			<Landing>
 				<Meta title='Index' desc='homepage of the humans of surat' url={url} />
-
 				<BodyText
-					fontFamily='HKGrotesk-BoldLegacy'
+					fontFamily='legacy'
 					align='center'
 					color='gray.500'
 					mb={[2, 0]}>
 					{subtitle}
 				</BodyText>
 
-				<Title align='center'>
+				<Title letterSpacing={3} align='center' fontFamily='black'>
 					Humans of <br /> Surat
 				</Title>
 			</Landing>

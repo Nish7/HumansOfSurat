@@ -19,7 +19,7 @@ export default global = {
 			width: 'auto',
 		},
 		'.my-masonry-grid_column': {
-			paddingLeft: '10px' /* gutter size */,
+			// paddingLeft: '10px' /* gutter size */,
 			backgroundClip: 'padding-box',
 		},
 	}),

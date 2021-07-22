@@ -14,9 +14,9 @@ function SeriesCard({ series, idx = 0 }) {
 				bgImage={`url(${PreviewImage.url})`}
 				backgroundPosition='center'
 				backgroundSize='cover'
-				w={['100%', '95%', '80%']}
-				h={{ base: 56, md: 96 }}
-				borderRadius={20}
+				w={['95%', '95%', '80%']}
+				h={[40, 56, 96]}
+				borderRadius={17}
 				mx='auto'
 				my={10}
 				justify={`flex-${idx % 2 === 0 ? 'start' : 'end'}`}
@@ -35,8 +35,8 @@ function SeriesInfoBox({ title }) {
 		<Box
 			bg={bgColor}
 			d='inline-block'
-			mx={8}
-			maxWidth={['90%', '90%', '50%']}
+			mx={['auto', 'auto', 8]}
+			maxWidth={['full', '90%', '50%']}
 			opacity={{ base: '80%', md: '100%' }}
 			borderRadius={10}
 			p={[6, 7, 10]}>
@@ -49,7 +49,7 @@ function SeriesInfoBox({ title }) {
 			<Heading2
 				fontSize={['2xl', '3xl', '5xl']}
 				fontFamily='heading'
-				letterSpacing='-1.4px'>
+				letterSpacing='1px'>
 				{title}
 			</Heading2>
 		</Box>
