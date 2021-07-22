@@ -54,13 +54,14 @@ function Series({ series, url }) {
 		</>
 	);
 }
+// TODO: The host will be changed in prod for image
 
 function MiniStoryCard({ title, image, slug = '' }) {
 	return (
 		<Link passHref href={`/story/${slug}`}>
 			<Box flexBasis='30%' m={5} _hover={{ cursor: 'pointer' }}>
 				<Image
-					src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${image.url}`}
+					src={image.url}
 					alt='StoryImage'
 					width='100%'
 					borderRadius={5}

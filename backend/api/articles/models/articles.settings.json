@@ -43,7 +43,17 @@
       "type": "uid",
       "targetField": "title",
       "required": true,
-      "maxLength": 60
+      "maxLength": 30
+    },
+    "previewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }

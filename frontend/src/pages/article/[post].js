@@ -9,14 +9,25 @@ import ArticleBody from '@/components/Articles/ArticleBody';
 function ArticlePost({ article, url }) {
 	// TODO: Change post param/query to postSlug (or something)
 
-	const { title, published_at, readingTime, previewQuote, tags, author, body } =
-		article;
+	const {
+		title,
+		published_at,
+		readingTime,
+		previewQuote,
+		tags,
+		author,
+		body,
+		previewImage,
+	} = article;
+
+	console.log(previewImage);
 
 	return (
 		<>
 			<Meta
 				title={title}
 				desc={previewQuote}
+				image={previewImage?.url}
 				url={url}
 				type='article'
 				article={article}
@@ -31,7 +42,7 @@ function ArticlePost({ article, url }) {
 					h='auto'>
 					<ArticleSidebar
 						published_at={published_at}
-						author={author.fullName}
+						author={author?.fullName}
 						readingTime={readingTime}
 						tags={tags}
 					/>

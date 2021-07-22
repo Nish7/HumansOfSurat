@@ -78,5 +78,6 @@ export async function getStaticProps() {
 			events,
 			socialMedia,
 		},
+		revalidate: 1,
 	};
 }

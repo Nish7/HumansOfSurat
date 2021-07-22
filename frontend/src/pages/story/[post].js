@@ -12,6 +12,8 @@ function StoryPost({ story, url }) {
 	const { title, published_at, previewQuote, author, body, image } = story;
 	const opacity = useColorModeValue(0.7, 0.3);
 
+	// TODO: The host will be changed in prod image
+
 	return (
 		<>
 			<Meta
@@ -25,7 +27,7 @@ function StoryPost({ story, url }) {
 			<Box mx='auto' w={['90%', '90%', '55%']} my={15}>
 				{/* Main */}
 				<Image
-					src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${image.url}`}
+					src={image.url}
 					alt='StoryImage'
 					mx='auto'
 					boxShadow='2xl'
@@ -63,7 +65,7 @@ function StoryPost({ story, url }) {
 					color='gray.500'
 					fontWeight='bold'>
 					{format(new Date(published_at), 'do MMMM Y')} •{' '}
-					{author.fullName ?? 'Anonymous'}
+					{author?.fullName ?? 'Anonymous'}
 				</BodyText>
 			</Box>
 		</>

@@ -20,7 +20,6 @@ export default function StoryCard({ story }) {
 	const hoverBg = useColorModeValue('gray.100', 'gray.700');
 
 	// TODO image Url will be changes in Prod (as image will be hosted)
-	// TODO href to the link is left
 	return (
 		<Link passHref href={`/story/${slug}`}>
 			<Box
@@ -35,7 +34,7 @@ export default function StoryCard({ story }) {
 					bg: hoverBg,
 				}}>
 				<Image
-					src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${story.image.url}`}
+					src={story.image.url}
 					alt={image.formats.thumbnail.hash}
 					layout='fill'
 					width='100%'

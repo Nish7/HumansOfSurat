@@ -41,6 +41,7 @@ export async function getStaticProps() {
 			desc: info.description,
 			articles,
 		},
+		revalidate: 1,
 	};
 }
 

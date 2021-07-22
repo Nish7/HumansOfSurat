@@ -11,7 +11,7 @@ function SeriesCard({ series, idx = 0 }) {
 	return (
 		<Link passHref href={`/series/${slug}`}>
 			<Flex
-				bgImage={`url(${process.env.NEXT_PUBLIC_STRAPI_API_URL}${PreviewImage.url})`}
+				bgImage={`url(${PreviewImage.url})`}
 				backgroundPosition='center'
 				backgroundSize='cover'
 				w={['100%', '95%', '80%']}
