@@ -15,7 +15,7 @@ function Footer() {
 				bottom='0'
 				left='0'>
 				<ColorModeButton />
-				<BodyText color='gray.500' fontSize={['xs', 'sm']}>
+				<BodyText color='gray.500' fontSize={['0.65rem', 'sm', 'sm']}>
 					&copy; {new Date().getFullYear()} Humans of Surat | Developed with{' '}
 					<Icon as={FaHeart} color='red.400' /> by{' '}
 					<Link href='https://www.instagram.com/iam_nish7/'>Nish</Link>

@@ -31,7 +31,11 @@ export default function Home({
 					{subtitle}
 				</BodyText>
 
-				<Title letterSpacing={3} align='center' fontFamily='black'>
+				<Title
+					letterSpacing={3}
+					align='center'
+					fontFamily='black'
+					fontSize={['5xl', '6xl', '8xl']}>
 					Humans of <br /> Surat
 				</Title>
 			</Landing>

@@ -31,6 +31,7 @@ function YearContainer({ year, children }) {
 					letterSpacing={20}
 					fontSize={['5xl', '7xl', '26rem']}
 					fontWeight='bold'
+					mb={[5, 5, 0]}
 					color='gray.500'
 					align='center'>
 					{year}

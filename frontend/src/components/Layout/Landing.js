@@ -12,7 +12,7 @@ function Landing({ children }) {
 				backgroundPosition: 'center center',
 				backgroundSize: ['800px 800px', '900px 900px'],
 			}}
-			height='91vh'
+			height={['80vh', '85vh', '91vh']}
 			align='center'
 			justifyContent='center'
 			flexDirection='column'>

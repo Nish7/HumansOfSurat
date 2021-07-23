@@ -25,7 +25,7 @@ export default class Document extends NextDocument {
 
 					<link
 						rel='preload'
-						href='/fonts/Thonburi.ttf'
+						href='/fonts/Thonburi.ttc'
 						as='font'
 						crossOrigin=''
 					/>
