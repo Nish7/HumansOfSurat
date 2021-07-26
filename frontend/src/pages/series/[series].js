@@ -53,7 +53,6 @@ function Series({ series, url }) {
 		</>
 	);
 }
-// TODO: The host will be changed in prod for image
 
 function MiniStoryCard({ title, image, slug = '' }) {
 	return (

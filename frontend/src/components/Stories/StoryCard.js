@@ -10,16 +10,16 @@ import {
 	useColorModeValue,
 	Icon,
 	Text,
+	Skeleton,
 } from '@chakra-ui/react';
 
 export default function StoryCard({ story }) {
 	const { author, image, title, body, published_at, slug } = story;
 	const bodyColor = useColorModeValue('gray.700', 'gray.400');
-	const bgColor = useColorModeValue('gray.50', '#1c2430');
+	// const bgColor = useColorModeValue('gray.50', '#1c2430');
 	const hoverColor = useColorModeValue('black', 'gray.100');
 	const hoverBg = useColorModeValue('gray.100', 'gray.700');
 
-	// TODO image Url will be changes in Prod (as image will be hosted)
 	return (
 		<Link passHref href={`/story/${slug}`}>
 			<Box
@@ -37,6 +37,7 @@ export default function StoryCard({ story }) {
 					src={story.image.url}
 					alt={image.formats.thumbnail.hash}
 					layout='fill'
+					fallback={<Skeleton height='300px' />}
 					width='100%'
 					borderRadius={5}
 					maxHeight={96}

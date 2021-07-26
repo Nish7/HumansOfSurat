@@ -7,7 +7,6 @@ import Link from 'next/link';
 function SeriesCard({ series, idx = 0 }) {
 	const { title, PreviewImage, slug } = series;
 
-	// TODO image Url will be changes in Prod (as image will be hosted)
 	return (
 		<Link passHref href={`/series/${slug}`}>
 			<Flex

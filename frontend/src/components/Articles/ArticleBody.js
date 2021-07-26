@@ -12,7 +12,6 @@ export default function ArticleBody({ body }) {
 					img: (node) => (
 						<Image
 							my={10}
-							// TODO: The host will be changed in prod
 							src={node.src}
 							maxWidth={['250px', '250px', '500px']}
 							mx='auto'
