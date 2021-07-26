@@ -9,6 +9,8 @@ import MoreHumans from '@/components/Layout/MoreHumans';
 import SocialMedia from '@/components/Layout/SocialMedia';
 import fetcher from '@/utils/fetcher';
 
+import Fade from 'react-reveal/Fade';
+
 export default function Home({
 	url,
 	initialStories = [],
@@ -30,14 +32,15 @@ export default function Home({
 					mb={[2, 0]}>
 					{subtitle}
 				</BodyText>
-
-				<Title
-					letterSpacing={3}
-					align='center'
-					fontFamily='black'
-					fontSize={['5xl', '6xl', '8xl']}>
-					Humans of <br /> Surat
-				</Title>
+				<Fade duration={2000}>
+					<Title
+						letterSpacing={3}
+						align='center'
+						fontFamily='black'
+						fontSize={['5xl', '6xl', '8xl']}>
+						Humans of <br /> Surat
+					</Title>
+				</Fade>
 			</Landing>
 
 			{/* Latest Stories */}

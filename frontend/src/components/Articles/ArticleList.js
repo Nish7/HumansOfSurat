@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import YearSection from '@/components/Articles/YearSection';
+import Fade from 'react-reveal/Fade';
 
 function ArticleList({ articles }) {
 	const categoriseArticles = useCallback((articles) => {
@@ -19,7 +20,9 @@ function ArticleList({ articles }) {
 	return (
 		<>
 			{Object.keys(articlesByYear).map((y) => (
-				<YearSection key={y} year={y} articles={articlesByYear[y]} />
+				<Fade key={y} distance='2em' bottom>
+					<YearSection key={y} year={y} articles={articlesByYear[y]} />
+				</Fade>
 			))}
 		</>
 	);

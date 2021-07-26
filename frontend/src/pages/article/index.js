@@ -4,6 +4,8 @@ import fetcher from '@/utils/fetcher';
 import Heading2 from '@/components/Typography/Heading-2';
 import ArticleList from '@/components/Articles/ArticleList';
 import { VStack } from '@chakra-ui/react';
+import Fade from 'react-reveal/Fade';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 function ArticleIndex({ url, desc, articles }) {
 	return (
@@ -13,9 +15,11 @@ function ArticleIndex({ url, desc, articles }) {
 
 			{/* Info */}
 			<VStack h={['70vh', '70vh', '91vh']} justify='center' align='center'>
-				<Title fontFamily='black' letterSpacing={2} mb={10}>
-					Articles.
-				</Title>
+				<Fade duration={2000}>
+					<Title fontFamily='black' letterSpacing={2} mb={10}>
+						Articles.
+					</Title>
+				</Fade>
 
 				<Heading2
 					w={['90%', '80%', '80%']}
@@ -34,7 +38,9 @@ function ArticleIndex({ url, desc, articles }) {
 			{/* Filter */}
 
 			{/* Article List */}
-			<ArticleList articles={articles} />
+			<TransitionGroup>
+				<ArticleList articles={articles} />
+			</TransitionGroup>
 		</>
 	);
 }
