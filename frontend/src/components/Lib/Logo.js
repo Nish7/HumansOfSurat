@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, SkeletonCircle } from '@chakra-ui/react';
 import React from 'react';
 import BodyText from '../Typography/BodyText';
 // import Image from 'next/image';
@@ -11,6 +11,7 @@ function Logo(props) {
 			<Flex {...props} align='center' _hover={{ cursor: 'pointer' }}>
 				<Image
 					src='/images/logo-bg.png'
+					fallback={<SkeletonCircle size={12} mr={4} />}
 					alt='logo'
 					height='45px'
 					width='50px'
