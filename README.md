@@ -1,6 +1,9 @@
 # Humans of Surat
+#
+Humans of Surat is a photoblog and the content focuses on the people of surat (city in gujarat, india) and with everyphoto there is accompanying caption that sheds incredible light into personal memories, beliefs, attitudes and experiences.
+
 ## Build: Development
-Status: Development in progress 🟡
+Status: Version 0.1.0 
 
 - [x] Design
 	- [x] Typographies
